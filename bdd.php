@@ -14,7 +14,7 @@ try {
     // Créer la base de données si elle n'existe pas
     $sql = "CREATE DATABASE IF NOT EXISTS `$database` DEFAULT CHARACTER SET = 'utf8mb4'";
     $conn->exec($sql);
-    echo "Base de données '$database' créée avec succès.\n";
+    // echo "Base de données '$database' créée avec succès.\n";
 
     // Se connecter à la base de données créée
     $conn = new PDO("mysql:host=$host;dbname=$database", $user, $password);
@@ -78,7 +78,7 @@ try {
     foreach ($tables as $tableSql) {
         try {
             $conn->exec($tableSql);
-            echo "Table créée avec succès.\n";
+            // echo "Table créée avec succès.\n";
         } catch (PDOException $e) {
             echo "Erreur lors de la création de la table : " . $e->getMessage() . "\n";
         }
@@ -98,7 +98,7 @@ try {
     foreach ($constraints as $constraintSql) {
         try {
             $conn->exec($constraintSql);
-            echo "Contrainte de clé étrangère ajoutée avec succès.\n";
+            // echo "Contrainte de clé étrangère ajoutée avec succès.\n";
         } catch (PDOException $e) {
             echo "Erreur lors de l'ajout de la contrainte : " . $e->getMessage() . "\n";
         }
